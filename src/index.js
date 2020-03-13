@@ -51,12 +51,12 @@ fetch("http://localhost:3000/puppies/3")
 
 function changeBreed(breed) {
   fetch("http://localhost:3000/puppies/2", {
-    method: "post",
+    method: "patch",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json"
     },
-    body: JSON.stringify(breed)
+    body: JSON.stringify({breed: `${breed}`})
   })
     .then(function(response) {
       return response.json();
